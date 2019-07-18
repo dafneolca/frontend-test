@@ -16,4 +16,8 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 The data of this project is fetch on public api [Punk API](https://punkapi.com/documentation/v2).
 
+## Installed
+angular material - angular/material
+- ngx-pagination
+
 

@@ -1,0 +1,66 @@
+.beer-detail{
+  margin: 0 auto;
+  width: 80%;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+p {
+  // text-align: center;
+}
+
+img {
+  height: 300px;
+  padding: 0 30px; 
+}
+
+table {
+  padding: 20px 0 0px 0;
+}
+
+th, td {
+  width: 160px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.go-back-div {
+  margin:30px;
+}
+
+.back-text:hover{
+  font-size:17px;
+  color:red;
+  cursor: pointer;
+}
+
+
+ul {
+  margin: 18px;
+}
+
+button {
+  // color: #399bab;
+  // background-color: white;
+  color: white;
+  background-color: #397FAF;
+  border: 0;
+  height:60px;
+  font-size: 20px;
+  margin: 50px 0;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #3967C4;
+}
+
+.image-pairing-list{
+  display:flex;
+  background-color: lightcoral;
+  color:white;
+  padding:30px;
+}
+
+

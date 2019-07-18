@@ -1,5 +1,10 @@
-<div class="beer"
-     *ngFor="let beer of (beers$ | async)">
+<div class="search-bar" style="position:absolute; top:30px;">
+  <input placeholder="filter for your beer..." style="width: 400px;
+  padding: 7px;
+  font-size: 15px;" />
+</div>
+
+<div class="beer" *ngFor="let beer of (beers$ | async )" (click)="goToBeer(beer)">
   <h4>
     {{beer.name}}
   </h4>

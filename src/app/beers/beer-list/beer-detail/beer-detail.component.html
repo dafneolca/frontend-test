@@ -1,0 +1,67 @@
+<div class="go-back-div">
+  <p class="back-text" style="text-align:left" (click)="goBack()">Back to all beers</p>
+</div>
+
+<div *ngIf="beer" class="beer-detail">
+  <h1> {{beer.name}}</h1>
+  <p>{{beer.description}}<br><br>
+    <em>Beer contributed by: {{beer.contributed_by}}</em></p>
+
+  <div class="image-pairing-list">
+    <img src="{{beer.image_url}}">
+
+    <div class="right-section">
+      <div class="food-pairing">
+        <p style="margin-top:0">{{beer.name}} can be paired with the following meals: </p>
+        <ul *ngFor="let food of beer.food_pairing">
+          <li>{{food}}</li>
+        </ul>
+      </div>
+      <table style="padding: 20px 0; text-align: center;">
+        <tr>
+          <th>
+            <h3>First Brewed</h3>
+          </th>
+          <th>
+            <h3>Abv</h3>
+          </th>
+          <th>
+            <h3>Ibu</h3>
+          </th>
+        </tr>
+        <tr>
+          <td>{{beer.first_brewed}}</td>
+          <td>{{beer.abv}}</td>
+          <td>{{beer.ibu}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <button *ngIf="!viewGravity" (click)="toggleGravityView()">Show difference in OG and FG</button>
+  <button *ngIf="viewGravity" (click)="toggleGravityView()">Hide difference in OG and FG</button>
+  <div *ngIf="viewGravity">
+    <table style="padding: 20px 0; text-align: center;">
+      <tr>
+        <th>
+          <h3>Original Gravity</h3>
+        </th>
+        <th>
+          <h3>Final Gravity</h3>
+        </th>
+        <th>
+          <h3>Difference</h3>
+        </th>
+      </tr>
+      <tr>
+        <td>{{beer.target_og}}</td>
+        <td>{{beer.target_fg}}</td>
+        <td>{{beer.target_og - beer.target_fg}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="go-back-div">
+  <p class="back-text" (click)="goBack()">Back to all beers</p>
+</div>

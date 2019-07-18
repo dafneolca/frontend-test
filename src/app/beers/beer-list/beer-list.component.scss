@@ -30,6 +30,10 @@ $height: 300px;
     }
   }
 
+  .beer:hover{
+    cursor: pointer;
+  }
+
   @media screen and (min-width: 1420px) {
     max-width: 70%;
     margin: 50px auto;

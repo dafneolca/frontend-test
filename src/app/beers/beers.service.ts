@@ -9,6 +9,11 @@ export class BeersService {
 
   constructor(private http: HttpClient) { }
 
+  public getBeerDetail(id): Observable<any> {
+    return this.http.get(`https://api.punkapi.com/v2/beers/${id}`);
+  }
+
+
   public getBeers(): Observable<any> {
     return this.http.get('https://api.punkapi.com/v2/beers');
   }
