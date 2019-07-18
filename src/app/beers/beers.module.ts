@@ -11,13 +11,16 @@ import { BeersEffects } from './store/beers.effects';
 import { BeersService } from './beers.service';
 import { BeerDetailComponent } from './beer-list/beer-detail/beer-detail.component';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
     RouterModule.forChild(BeersRouting),
     StoreModule.forFeature('drinks', beersReducers),
-    EffectsModule.forFeature([BeersEffects])
+    EffectsModule.forFeature([BeersEffects]),
+    NgxPaginationModule
   ],
   declarations: [
     BeerListComponent,

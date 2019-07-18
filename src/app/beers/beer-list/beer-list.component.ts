@@ -18,6 +18,8 @@ export class BeerListComponent implements OnInit {
 
   public beers$: Observable<any>;
 
+  beers = [1, 2, 4, 5, 6, 7, 8, 9]
+
   constructor(private store: Store<DrinksState>, private router: Router) { }
 
   ngOnInit() {
