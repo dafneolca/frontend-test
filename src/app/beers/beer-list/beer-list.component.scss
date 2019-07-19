@@ -4,13 +4,23 @@ $height: 300px;
 
 
 :host {
-
+  input {
+    width: 400px;
+    padding: 7px;
+    font-size: 15px;
+  }
+  .main-content-div{
   display: flex;
   flex-wrap: wrap;
-  margin: 50px;
+  margin: 15px 50px 50px 50px;
   justify-content: center;
   align-items: center;
-
+  }
+  .search-bar{
+    display:flex;
+    justify-content: center;
+    padding: 60px 0 0 0;
+  }
   .beer {
     display: flex;
     justify-content: center;
@@ -28,6 +38,10 @@ $height: 300px;
     img {
       height: 50%;
     }
+  }
+  .pagination-footer{
+    display:flex;
+    justify-content: center;
   }
 
   .beer:hover{

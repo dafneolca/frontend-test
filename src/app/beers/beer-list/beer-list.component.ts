@@ -18,7 +18,11 @@ export class BeerListComponent implements OnInit {
 
   public beers$: Observable<any>;
 
-  beers = [1, 2, 4, 5, 6, 7, 8, 9]
+  userSearch: string;
+
+  itemsPage: number = 3;
+  onPage: number = 1;
+
 
   constructor(private store: Store<DrinksState>, private router: Router) { }
 
@@ -29,6 +33,11 @@ export class BeerListComponent implements OnInit {
 
   goToBeer(beer) {
     this.router.navigate(['/beers/', beer.id]);
+  }
+
+  pageChanged($event) {
+    this.onPage = $event;
+    this.itemsPage = 3 * this.onPage;
   }
 
 }

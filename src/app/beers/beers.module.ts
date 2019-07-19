@@ -12,6 +12,8 @@ import { BeersService } from './beers.service';
 import { BeerDetailComponent } from './beer-list/beer-detail/beer-detail.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
+import { beerFilterPipe } from './beer-filter.pipe';
 
 @NgModule({
   imports: [
@@ -20,11 +22,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
     RouterModule.forChild(BeersRouting),
     StoreModule.forFeature('drinks', beersReducers),
     EffectsModule.forFeature([BeersEffects]),
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   declarations: [
     BeerListComponent,
-    BeerDetailComponent
+    BeerDetailComponent,
+    beerFilterPipe
   ],
   providers: [
     BeersService
