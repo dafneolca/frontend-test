@@ -42,6 +42,7 @@ $height: 300px;
   .pagination-footer{
     display:flex;
     justify-content: center;
+    padding: 0 0 50px 0;
   }
 
   .beer:hover{
@@ -52,4 +53,28 @@ $height: 300px;
     max-width: 70%;
     margin: 50px auto;
   }
+}
+
+.pagination ::ng-deep .ngx-pagination .current {
+  color: #399bab;
+  background-color: black;
+  font-weight: bold;
+}
+.pagination ::ng-deep ul{
+  padding: 0;
+}
+
+.pagination ::ng-deep .ngx-pagination .disabled {
+  visibility: hidden;
+  padding:0;
+}
+
+.pagination ::ng-deep .ngx-pagination a {
+  color: black;
+}
+
+.pagination ::ng-deep .ngx-pagination a:hover {
+  color: #399bab;
+  background-color: black;
+  font-size: 18px;
 }

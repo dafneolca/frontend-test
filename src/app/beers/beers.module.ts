@@ -15,6 +15,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { beerFilterPipe } from './beer-filter.pipe';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -23,7 +26,8 @@ import { beerFilterPipe } from './beer-filter.pipe';
     StoreModule.forFeature('drinks', beersReducers),
     EffectsModule.forFeature([BeersEffects]),
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    InfiniteScrollModule
   ],
   declarations: [
     BeerListComponent,

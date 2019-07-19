@@ -31,7 +31,7 @@ th, td {
 
 .back-text:hover{
   font-size:17px;
-  color:red;
+  color:lightcoral;
   cursor: pointer;
 }
 
@@ -48,12 +48,12 @@ button {
   border: 0;
   height:60px;
   font-size: 20px;
-  margin: 50px 0;
+  margin: 50px 0 0 0;
 }
 
 button:hover {
   cursor: pointer;
-  background-color: #3967C4;
+  opacity: 0.8;
 }
 
 .image-pairing-list{
@@ -61,6 +61,23 @@ button:hover {
   background-color: lightcoral;
   color:white;
   padding:30px;
+}
+
+.gravity-table{
+  padding: 20px 0;
+  text-align: center;
+  animation: fadeIn 1s ease-in both;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -20%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
 }
 
 

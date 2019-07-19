@@ -41,7 +41,7 @@
   <button *ngIf="!viewGravity" (click)="toggleGravityView()">Show difference in OG and FG</button>
   <button *ngIf="viewGravity" (click)="toggleGravityView()">Hide difference in OG and FG</button>
   <div *ngIf="viewGravity">
-    <table style="padding: 20px 0; text-align: center;">
+    <table class="gravity-table">
       <tr>
         <th>
           <h3>Original Gravity</h3>
