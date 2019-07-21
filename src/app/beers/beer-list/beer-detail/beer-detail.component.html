@@ -4,61 +4,72 @@
 
 <div *ngIf="beer" class="beer-detail">
   <h1> {{beer.name}}</h1>
-  <p>{{beer.description}}<br><br>
-    <em>Beer contributed by: {{beer.contributed_by}}</em></p>
+  <p>{{beer.description}}</p>
+  <p style="text-align: right"><em>Beer contributed by: {{beer.contributed_by}}</em></p>
+  <div class="main-content-box">
+    <div class="image-pairing-list">
+      <img src="{{beer.image_url}}">
 
-  <div class="image-pairing-list">
-    <img src="{{beer.image_url}}">
+      <div class="right-section">
+        <div class="food-pairing">
+          <p style="margin-top:0">{{beer.name}} can be paired with the following meals: </p>
+          <ul *ngFor="let food of beer.food_pairing">
+            <li>{{food}}</li>
+          </ul>
+        </div>
+        <table class="beer-info-table">
+          <tr>
+            <th>
+              <h3>{{beer.first_brewed}}</h3>
+            </th>
+            <th>
+              <h3>{{beer.abv}}</h3>
+            </th>
+            <th>
+              <h3>{{beer.ibu}}</h3>
+            </th>
+          </tr>
+          <tr>
+            <td>First Brewed</td>
+            <td>Abv</td>
+            <td>Ibu</td>
+          </tr>
 
-    <div class="right-section">
-      <div class="food-pairing">
-        <p style="margin-top:0">{{beer.name}} can be paired with the following meals: </p>
-        <ul *ngFor="let food of beer.food_pairing">
-          <li>{{food}}</li>
-        </ul>
+        </table>
       </div>
-      <table style="padding: 20px 0; text-align: center;">
-        <tr>
-          <th>
-            <h3>First Brewed</h3>
-          </th>
-          <th>
-            <h3>Abv</h3>
-          </th>
-          <th>
-            <h3>Ibu</h3>
-          </th>
-        </tr>
-        <tr>
-          <td>{{beer.first_brewed}}</td>
-          <td>{{beer.abv}}</td>
-          <td>{{beer.ibu}}</td>
-        </tr>
-      </table>
     </div>
-  </div>
-
-  <button *ngIf="!viewGravity" (click)="toggleGravityView()">Show difference in OG and FG</button>
-  <button *ngIf="viewGravity" (click)="toggleGravityView()">Hide difference in OG and FG</button>
-  <div *ngIf="viewGravity">
-    <table class="gravity-table">
-      <tr>
-        <th>
-          <h3>Original Gravity</h3>
-        </th>
-        <th>
-          <h3>Final Gravity</h3>
-        </th>
-        <th>
-          <h3>Difference</h3>
-        </th>
-      </tr>
-      <tr>
-        <td>{{beer.target_og}}</td>
-        <td>{{beer.target_fg}}</td>
-        <td>{{beer.target_og - beer.target_fg}}</td>
-      </tr>
-    </table>
+    <div class="button-gravity-view">
+      <div class="button-tooltip">
+        <button (click)="toggleGravityView()">OG / FG
+          <svg [ngClass]="(viewGravity)?'animation':''" viewBox="0 0 512 512" class="ion-chevron-down"
+            style="fill:white">
+            <path
+              d="M256 298.3l174.2-167.2c4.3-4.2 11.4-4.1 15.8.2l30.6 29.9c4.4 4.3 4.5 11.3.2 15.5L264.1 380.9c-2.2 2.2-5.2 3.2-8.1 3-3 .1-5.9-.9-8.1-3L35.2 176.7c-4.3-4.2-4.2-11.2.2-15.5L66 131.3c4.4-4.3 11.5-4.4 15.8-.2L256 298.3z">
+            </path>
+          </svg>
+        </button>
+      </div>
+      <div *ngIf="viewGravity">
+        <table class="gravity-table">
+          <tr>
+            <th>
+              <h3>{{beer.target_og}}</h3>
+            </th>
+            <th>
+              <h3>{{beer.target_fg}}</h3>
+            </th>
+            <th>
+              <h3>{{beer.target_og - beer.target_fg | number : '1.1'}}</h3>
+            </th>
+          </tr>
+          <tr>
+            <td>Original Gravity</td>
+            <td>Final Gravity</td>
+            <td>Difference</td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 

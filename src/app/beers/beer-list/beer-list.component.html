@@ -1,10 +1,11 @@
-<div class="search-bar">
+<div class="search-bar" style="display:flex">
   <input placeholder="Search for your beer..." type="text" [(ngModel)]="userSearch" />
+  <button *ngIf="userSearch && userSearch.length>0" (click)="clearFilter()"
+    style="padding: 10px; margin: 0 10px; font-size: 12px">Clear Filter</button>
 </div>
 
-
 <div class="main-content-div">
-  <div class="beer"
+  <div class="beer" #beerFilterResult
     *ngFor="let beer of (beers$ | async ) | beerFilter: userSearch | paginate: { itemsPerPage: itemsPage, currentPage: onPage }"
     (click)="goToBeer(beer)">
     <h4>
@@ -19,7 +20,6 @@
 
 <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollUpDistance]="1.5"
   [infiniteScrollThrottle]="50" (scrolled)="onScrollDown()" (scrolledUp)="onScrollUp()"></div>
-
 
 <div class="pagination-footer">
   <pagination-controls (pageChange)="pageChanged($event)" class="pagination" previousLabel="" nextLabel="">

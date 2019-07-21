@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { DrinksState } from '../store';
 import { Observable } from 'rxjs/index';
@@ -20,12 +20,16 @@ import { BeersEffects } from '../store/beers.effects';
 })
 export class BeerListComponent implements OnInit {
 
+  @ViewChildren('beerFilterResult') createdItems;
+
   public beers$: Observable<any>;
 
   userSearch: string;
 
   itemsPage: number = 3;
   onPage: number = 1;
+
+  // beer-not-found
 
   constructor(private store: Store<DrinksState>, private router: Router) { }
 
@@ -40,11 +44,13 @@ export class BeerListComponent implements OnInit {
   }
 
   pageChanged($event) {
-    // console.log($event);
-    // console.log(this.itemsPage);
     this.onPage = $event;
-    // this.itemsPage = this.itemsPage * 2;
-    // console.log(this.itemsPage);
+    console.log(this.itemsPage)
+    console.log(this.createdItems)
+  }
+
+  clearFilter() {
+    this.userSearch = "";
   }
 
   onScrollDown() {

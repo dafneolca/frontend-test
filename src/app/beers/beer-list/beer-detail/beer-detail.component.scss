@@ -6,10 +6,6 @@
   flex-direction: column;
 }
 
-p {
-  // text-align: center;
-}
-
 img {
   height: 300px;
   padding: 0 30px; 
@@ -25,6 +21,56 @@ th, td {
   text-align: center;
 }
 
+.beer-info-table, .gravity-table{
+  padding: 0 !important;
+  text-align: center;
+  h3 {
+    font-size:24px;
+    font-weight:bolder;
+    background-color: #399bab;
+    color: white;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    margin:30px;
+  }
+  td {
+    position:relative;
+    bottom:30px;
+  }
+  th, td {
+    border: 0;
+  }
+}
+
+button svg {
+  cursor: pointer;
+  height: 12px;
+  top:5px;
+  right:-8px;
+  position: relative;
+  pointer-events: none;
+  transform: translateY(-50%);
+  width: 15px;
+} 
+
+.ion-chevron-down {
+  width: 300px;
+}
+button .animation {
+    animation: rotate 0.02s ease forwards;
+    top:-2px;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(180deg); }
+}
+
+
 .go-back-div {
   margin:30px;
 }
@@ -35,20 +81,18 @@ th, td {
   cursor: pointer;
 }
 
-
 ul {
   margin: 18px;
 }
 
 button {
-  // color: #399bab;
-  // background-color: white;
   color: white;
-  background-color: #397FAF;
+  background-color: #399bab;
   border: 0;
   height:60px;
   font-size: 20px;
-  margin: 50px 0 0 0;
+  width: 160px;
+  margin: 10px auto;
 }
 
 button:hover {
@@ -56,17 +100,60 @@ button:hover {
   opacity: 0.8;
 }
 
+.button-tooltip:hover .tooltip {
+  visibility: visible;
+  opacity:1;
+}
+
+.button-tooltip  .tooltip {
+  font-size:12px;
+  margin: 0 auto;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: relative;
+  z-index: 1;
+  bottom: 3px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.button-tooltip .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
 .image-pairing-list{
   display:flex;
+}
+
+.main-content-box{
   background-color: lightcoral;
   color:white;
   padding:30px;
+}
+
+.button-gravity-view, .button-tooltip{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .gravity-table{
   padding: 20px 0;
   text-align: center;
   animation: fadeIn 1s ease-in both;
+  margin: 0 auto;
 }
 
 @keyframes fadeIn {

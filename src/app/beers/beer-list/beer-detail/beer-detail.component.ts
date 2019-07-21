@@ -6,9 +6,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { BeersService } from '../../beers.service'
 
-
-
-
 @Component({
   selector: 'app-beer-detail',
   templateUrl: './beer-detail.component.html',
