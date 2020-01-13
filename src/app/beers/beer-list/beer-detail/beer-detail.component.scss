@@ -1,47 +1,65 @@
-.beer-detail{
+.beer-detail {
   margin: 0 auto;
   width: 80%;
-  display:flex;
+  display: flex;
   align-items: center;
   flex-direction: column;
 }
 
+.beer-pairing {
+  margin-top: 0
+}
+
+.go-back-text {
+  text-align: left;
+}
+
+.contribted-by {
+  text-align: right;
+}
+
 img {
   height: 300px;
-  padding: 0 30px; 
+  padding: 0 30px;
 }
 
 table {
   padding: 20px 0 0px 0;
 }
 
-th, td {
+th,
+td {
   width: 160px;
   border: 1px solid black;
   text-align: center;
 }
 
-.beer-info-table, .gravity-table{
+.beer-info-table,
+.gravity-table {
   padding: 0 !important;
   text-align: center;
+
   h3 {
-    font-size:24px;
-    font-weight:bolder;
+    font-size: 24px;
+    font-weight: bolder;
     background-color: #399bab;
     color: white;
     border-radius: 50%;
     height: 100px;
     width: 100px;
-    display:flex;
+    display: flex;
     justify-content: center;
-    align-items:center;
-    margin:30px;
+    align-items: center;
+    margin: 30px;
   }
+
   td {
-    position:relative;
-    bottom:30px;
+    position: relative;
+    bottom: 30px;
   }
-  th, td {
+
+  th,
+  td {
     border: 0;
   }
 }
@@ -49,35 +67,41 @@ th, td {
 button svg {
   cursor: pointer;
   height: 12px;
-  top:5px;
-  right:-8px;
+  top: 5px;
+  right: -8px;
   position: relative;
   pointer-events: none;
   transform: translateY(-50%);
   width: 15px;
-} 
+}
 
 .ion-chevron-down {
   width: 300px;
 }
+
 button .animation {
-    animation: rotate 0.02s ease forwards;
-    top:-2px;
+  animation: rotate 0.02s ease forwards;
+  top: -2px;
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(180deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
 }
 
 
 .go-back-div {
-  margin:30px;
+  margin: 30px;
 }
 
-.back-text:hover{
-  font-size:17px;
-  color:lightcoral;
+.back-text:hover {
+  font-size: 17px;
+  color: lightcoral;
   cursor: pointer;
 }
 
@@ -89,7 +113,7 @@ button {
   color: white;
   background-color: #399bab;
   border: 0;
-  height:60px;
+  height: 60px;
   font-size: 20px;
   width: 160px;
   margin: 10px auto;
@@ -102,11 +126,11 @@ button:hover {
 
 .button-tooltip:hover .tooltip {
   visibility: visible;
-  opacity:1;
+  opacity: 1;
 }
 
-.button-tooltip  .tooltip {
-  font-size:12px;
+.button-tooltip .tooltip {
+  font-size: 12px;
   margin: 0 auto;
   width: 120px;
   background-color: #555;
@@ -133,23 +157,24 @@ button:hover {
   border-color: #555 transparent transparent transparent;
 }
 
-.image-pairing-list{
-  display:flex;
+.image-pairing-list {
+  display: flex;
 }
 
-.main-content-box{
+.main-content-box {
   background-color: lightcoral;
-  color:white;
-  padding:30px;
+  color: white;
+  padding: 30px;
 }
 
-.button-gravity-view, .button-tooltip{
-  display:flex;
+.button-gravity-view,
+.button-tooltip {
+  display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.gravity-table{
+.gravity-table {
   padding: 20px 0;
   text-align: center;
   animation: fadeIn 1s ease-in both;
@@ -157,14 +182,13 @@ button:hover {
 }
 
 @keyframes fadeIn {
-	from {
-		opacity: 0;
-		transform: translate3d(0, -20%, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
-
-

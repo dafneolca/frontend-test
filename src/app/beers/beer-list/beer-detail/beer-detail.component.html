@@ -1,18 +1,17 @@
 <div class="go-back-div">
-  <p class="back-text" style="text-align:left" (click)="goBack()">Back to all beers</p>
+  <p class="back-text" class="go-back-text" (click)="goBack()">Back to all beers</p>
 </div>
 
 <div *ngIf="beer" class="beer-detail">
-  <h1> {{beer.name}}</h1>
+  <h1>{{beer.name}}</h1>
   <p>{{beer.description}}</p>
-  <p style="text-align: right"><em>Beer contributed by: {{beer.contributed_by}}</em></p>
+  <p class="contribted-by"><em>Beer contributed by: {{beer.contributed_by}}</em></p>
   <div class="main-content-box">
     <div class="image-pairing-list">
       <img src="{{beer.image_url}}">
-
       <div class="right-section">
         <div class="food-pairing">
-          <p style="margin-top:0">{{beer.name}} can be paired with the following meals: </p>
+          <p class="beer-pairing">{{beer.name}} can be paired with the following meals: </p>
           <ul *ngFor="let food of beer.food_pairing">
             <li>{{food}}</li>
           </ul>
@@ -34,7 +33,6 @@
             <td>Abv</td>
             <td>Ibu</td>
           </tr>
-
         </table>
       </div>
     </div>
@@ -72,7 +70,6 @@
     </div>
   </div>
 </div>
-
 <div class="go-back-div">
   <p class="back-text" (click)="goBack()">Back to all beers</p>
 </div>
